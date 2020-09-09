@@ -1,3 +1,4 @@
+#import the data
 weight <- read.csv(file.choose())
 View(weight)
 #exploring the data
@@ -27,8 +28,10 @@ qqline(Calories.Consumed)
 #scatter plot
 plot(Weight.gained..grams.,Calories.Consumed,main = 'scatterplot',col = "grey",col.lab="blue",
      col.main="red",xlab = 'Weight gained in grams.',ylab = 'Calories Consumed',pch=20)
+
 #correlation
 cor(Weight.gained..grams.,Calories.Consumed)#0.946991
+
 #model building
 weight_model <- lm(Weight.gained..grams.~Calories.Consumed,data = weight)
 summary(weight_model)# p-value = 2.856e-07 <0.05 which is significant
